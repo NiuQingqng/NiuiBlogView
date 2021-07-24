@@ -1,6 +1,6 @@
 <template>
     <div>
-      <article-list-item class="article-list-item" v-for="(article,index) in articles" :article="article" :key="index" />
+      <article-list-item class="article-list-item" v-for="(article,index) in articles" :article="article" :isShowDel="isShowDel" :key="index" />
     </div>
 </template>
 <script>
@@ -12,9 +12,20 @@
         articles:{
             type:Array,
             default(){
-                return []
+                return [{
+                  articleTitle:"请求服务器错误",
+                }]
             }
-        }
+        },
+        isShowDel:{
+            type:Boolean,
+            default(){
+              return false
+            }
+          }
+      },
+      filters:{
+
       }
     }
 </script>
